@@ -4,9 +4,10 @@ function walk (node) {
   // I stole this function from here:
   // http://is.gd/mwZp7E
 
-  var child, next
+  let child, next
 
-  if (node.tagName.toLowerCase() === 'input' || node.tagName.toLowerCase() === 'textarea' || node.classList.indexOf('ace_editor') > -1) {
+  if (!node) return
+  if (node.tagName === 'INPUT' || node.tagName === 'TEXTAREA') {
     return
   }
 
@@ -29,11 +30,14 @@ function walk (node) {
 }
 
 function handleText (textNode) {
-  var v = textNode.nodeValue
+  let v = textNode.nodeValue
 
   v = v.replace(/\bmaybe\b/g, 'mabye')
   v = v.replace(/\bMaybe\b/g, 'Mabye')
   v = v.replace(/\bMAYBE\b/g, 'MABYE')
+  v = v.replace(/\bmay be\b/g, 'mab ye')
+  v = v.replace(/\bMay be\b/g, 'Mab ye')
+  v = v.replace(/\bMAY BE\b/g, 'MAB YE')
 
   textNode.nodeValue = v
 }
