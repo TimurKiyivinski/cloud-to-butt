@@ -13,7 +13,7 @@ function walk (node) {
 
   switch (node.nodeType) {
     case 1: // Element
-    case 9: // Document
+    case Node.DOCUMENT_NODE:
     case 11: // Document fragment
       child = node.firstChild
       while (child) {
