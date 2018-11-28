@@ -38,6 +38,9 @@ function handleText (textNode) {
   v = v.replace(/\bmay be\b/g, 'mab ye')
   v = v.replace(/\bMay be\b/g, 'Mab ye')
   v = v.replace(/\bMAY BE\b/g, 'MAB YE')
+  v = v.replace(/\bsimulate\b/g, 'stimulate')
+  v = v.replace(/\bSimulate\b/g, 'Stimulate')
+  v = v.replace(/\BSIMULATE\b/g, 'STIMULATE')
 
   textNode.nodeValue = v
 }
