@@ -23,7 +23,7 @@ function walk (node) {
       }
       break
 
-    case 3: // Text node
+    case Node.TEXT_NODE
       handleText(node)
       break
   }
