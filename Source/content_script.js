@@ -12,9 +12,9 @@ function walk (node) {
   }
 
   switch (node.nodeType) {
-    case Node.ELEMENT_NODE:
-    case Node.DOCUMENT_NODE:
-    case Node.DOCUMENT_FRAGMENT_NODE:
+    case window.Node.ELEMENT_NODE:
+    case window.Node.DOCUMENT_NODE:
+    case window.Node.DOCUMENT_FRAGMENT_NODE:
       child = node.firstChild
       while (child) {
         next = child.nextSibling
@@ -23,7 +23,7 @@ function walk (node) {
       }
       break
 
-    case Node.TEXT_NODE
+    case window.Node.TEXT_NODE:
       handleText(node)
       break
   }
